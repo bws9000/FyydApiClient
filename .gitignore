@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 out/
 
 .gradle/*
 .idea/*
 
+=======
+.gradle
+/build/
+>>>>>>> a93e1f10fb8d6514ee91b6ce67ebb5db1472991a
 
 # Ignore Gradle GUI config
 gradle-app.setting
