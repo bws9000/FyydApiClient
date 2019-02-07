@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'com.burtwileysnyder'
-version '1.0-SNAPSHOT'
+version '1.0'
 
 sourceCompatibility = 1.8
 
@@ -27,7 +27,7 @@ patchPluginXml {
       <em>most HTML tags may be used</em>"""
 }
 group 'com.burtwileysnyder'
-version '1.0-SNAPSHOT'
+version '1.0'
 
 sourceCompatibility = 1.8
 
