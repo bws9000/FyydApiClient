@@ -19,11 +19,26 @@ public class FyydApiClient implements PodcastInterface {
 
     public FyydApiClient(OkHttpClient client) {
         httpClient = client;
+        init();
     }
 
     public FyydApiClient() {
         httpClient = new OkHttpClient();
+        init();
     }
+
+    private void init(){
+        //quick test
+        try {
+            String response = this.searchPodcasts("news", "1");
+            FyydApi fyyd = new Gson().fromJson(response, FyydApi.class);
+            System.out.println(fyyd.getData().get(0).getTitle());
+
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+
 
     @Override
     public String searchPodcasts(String title, String limit) throws IOException {
@@ -55,10 +70,6 @@ public class FyydApiClient implements PodcastInterface {
     }
 
     public static void main(String[] args) throws IOException {
-        //test
         FyydApiClient fyyd2 = new FyydApiClient();
-        String response = fyyd2.searchPodcasts("news", "1");
-        FyydApi fyyd = new Gson().fromJson(response, FyydApi.class);
-        System.out.println(fyyd.getData().get(0).getTitle());
     }
 }
